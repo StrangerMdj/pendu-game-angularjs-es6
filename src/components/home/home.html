@@ -1,0 +1,19 @@
+<div class="container">
+	<h1 class="title is-1">{{$ctrl.heading}}</h1>
+
+	<form name="rForm" ng-submit="$ctrl.confirmPseudoAction(rForm)" class="column is-two-thirds  form-main">
+		<div class="field">
+			<label class="label">Word</label>
+			<div class="control">
+			  <input class="input" type="text" ng-model="$ctrl.pseudo" placeholder="Enter a word" required>
+			</div>
+		</div>
+	
+		<div class="field is-grouped">
+		<div class="control">
+		  <button class="button is-link" ng-disabled="rForm.$invalid">Play</button>
+		</div>
+	  </div>
+	</form>
+	
+</div>

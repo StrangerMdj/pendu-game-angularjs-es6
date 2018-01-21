@@ -1,0 +1,2 @@
+
+import '@uirouter/angularjs';

@@ -1,0 +1,18 @@
+@import  'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css';
+
+.form-main{
+    margin: 0 auto;
+}
+.game-container{
+    text-align: center
+}
+.tag.fantasy{
+    font-size: 2.5rem !important
+}
+.mainer{
+    max-width: 350px;
+    margin: 0 auto
+}
+.mainer .control {
+    margin: 1em 0
+}

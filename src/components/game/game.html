@@ -1,0 +1,34 @@
+<div class="container game-cotainer">
+	<h1 class="title is-1">{{$ctrl.heading}}</h1>
+	<div class="mainer" ng-hide="$ctrl.success || $ctrl.failed.length >= 5">
+		<span class="tag is-danger fantasy is-medium">{{$ctrl.hiddenWord}}</span>
+
+		<div class="control">
+			<input class="input" type="text" ng-model="$ctrl.alphabet" 
+				   placeholder="Enterez un lettre" maxlength="1" >
+		</div>
+		<div class="control">
+			<button class="button  is-success is-link" ng-click="$ctrl.checkAlphabet()" >Check</butheton>
+				
+		</div>
+		<div class="control">
+			<div class="tags has-addons">
+			  <span class="tag">Hearts</span>
+			  
+				<span class="tag is-danger">{{$ctrl.hearts}}</span>
+			  
+			</div>
+		  </div>
+	</div>
+
+	<div class="notification is-danger" ng-show="$ctrl.failed.length >= 5">
+		<button class="delete" ng-click="$ctrl.close()"></button>
+		PERDU ... Le mot était : <strong>{{$ctrl._word}}</strong>
+	</div>
+	  
+	<div class="notification is-success" ng-show="$ctrl.success">
+		<button class="delete"  ng-click="$ctrl.close()"></button>
+			{{$ctrl.success}}
+	  </div>
+	
+</div>
