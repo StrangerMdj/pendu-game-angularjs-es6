@@ -1,5 +1,5 @@
 export default class GameController {
-	constructor($log, $rootScope, $state) {
+	constructor($log, $rootScope, $state, GameService) {
 		'ngInject';
 		this.heading = 'Pendu Game !!'
 		this.$log = $log;
@@ -7,14 +7,17 @@ export default class GameController {
 		this.$state = $state
 		this.failed =[];
 		this.hearts = 5;
+		this._gameService = GameService;
 	}
 
 	$onInit = () => {
 		if(this.$rootScoope.pseudo == undefined){
-			this.$state.go('home')
+			this._gameService.closeAction()
 		}
 		this.generateThePendu(); 
+		
 	};
+
 	generateThePendu = () =>{
 		this.count = 0;
 		this.word = this.$rootScoope.pseudo;
@@ -25,6 +28,7 @@ export default class GameController {
 		this.hiddenWord = this.word[0] + this.dash + this.word[this.word.length - 1];
 		this.word = "";
 	};
+
 	checkAlphabet = () => {
 			this.count = 0;
 			this._word = this.$rootScoope.pseudo;
@@ -49,6 +53,8 @@ export default class GameController {
 	};
 
 	close = () => {
-		this.$state.go('home')
+
+		this._gameService.closeAction();
+		this.$rootScoope.pseudo = ""
 	};
 }
