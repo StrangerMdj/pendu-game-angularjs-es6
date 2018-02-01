@@ -1,8 +1,7 @@
 export default class GameController {
-	constructor($log, $rootScope, $state, GameService) {
+	constructor($rootScope, $state, GameService) {
 		'ngInject';
 		this.heading = 'Pendu Game !!'
-		this.$log = $log;
 		this.$rootScoope = $rootScope;
 		this.$state = $state
 		this.failed =[];

@@ -1,8 +1,7 @@
 export default class HomeController {
-	constructor($log, $rootScope, $state) {
+	constructor($rootScope, $state) {
 		'ngInject';
 		this.$rootScoope = $rootScope;
-		this.$log = $log;
 		this.$state = $state;
 	}
 
